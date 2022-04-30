@@ -1,0 +1,25 @@
+#Caesar Cipher Encryption 
+TEXT=input("enter the text : ")
+KEY=int(input("enter the key value : "))
+newtext=""
+for i in TEXT:
+    if i.isupper():
+        newtext+=chr((ord(i)+KEY-65)%26+65)
+    elif (ord(i)==32):
+        newtext+=chr(ord(i))
+    else:
+        newtext+=chr((ord(i)+KEY-97)%26+97)
+print("Cipher Text : ",newtext)
+
+# Caesar Cipher Decryption 
+Cipher_text=input("enter the encrypted text : ")
+key =int(input("enter the key value : "))
+Plain_text=""
+for i in Cipher_text:
+    if i.isupper():
+        Plain_text+=chr((ord(i)-key-65)%26+65)
+    elif(ord(i)==32):
+        Plain_text+=chr(ord(i))
+    else:
+        Plain_text+=chr((ord(i)-key-97)%26+97)
+print("Plain Text : ",Plain_text)
